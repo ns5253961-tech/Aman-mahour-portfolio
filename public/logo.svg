@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Ambient outer glow -->
+    <filter id="outer-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Central disc glow -->
+    <filter id="disc-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Ring gradient -->
+    <linearGradient id="ring-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Outer faint track -->
+    <linearGradient id="track-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#7042f8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.3" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Cosmic Base Background (Circular Masked) -->
+  <circle cx="256" cy="256" r="250" fill="#030014" />
+
+  <!-- Outer Ambient Glow Circle -->
+  <circle cx="256" cy="256" r="195" fill="none" stroke="url(#track-grad)" stroke-width="2" opacity="0.6" />
+
+  <!-- Specular Rim Light Rings -->
+  <!-- Top-Right Bright Rim Arc -->
+  <path
+    d="M 256 64 A 192 192 0 0 1 448 256"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="5"
+    stroke-linecap="round"
+    filter="url(#outer-glow)"
+    opacity="0.95"
+  />
+  <path
+    d="M 280 66 A 192 192 0 0 1 440 230"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="2.5"
+    stroke-linecap="round"
+  />
+
+  <!-- Bottom-Left Rim Arc -->
+  <path
+    d="M 256 448 A 192 192 0 0 1 64 256"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="4.5"
+    stroke-linecap="round"
+    filter="url(#outer-glow)"
+    opacity="0.85"
+  />
+  <path
+    d="M 230 446 A 192 192 0 0 1 76 280"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+
+  <!-- Faint Full Orbital Ring -->
+  <circle
+    cx="256"
+    cy="256"
+    r="192"
+    fill="none"
+    stroke="url(#ring-grad)"
+    stroke-width="2"
+    opacity="0.4"
+  />
+
+  <!-- Outer Soft Halo around White Disc -->
+  <circle cx="256" cy="256" r="120" fill="#ffffff" opacity="0.12" filter="url(#outer-glow)" />
+
+  <!-- Central Glowing White Disc -->
+  <circle
+    cx="256"
+    cy="256"
+    r="105"
+    fill="#ffffff"
+    filter="url(#disc-glow)"
+  />
+
+  <!-- Central Stylized "n" with Sparkle (✦) -->
+  <g transform="translate(256, 256) rotate(6) translate(-256, -256)">
+    <!-- Stylized Lowercase "n" -->
+    <!-- Drawn as a thick smooth rounded arch with rounded caps -->
+    <path
+      d="M 218 296 
+         L 218 238 
+         C 218 208, 276 208, 276 238 
+         L 276 296"
+      fill="none"
+      stroke="#030014"
+      stroke-width="32"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- 4-Pointed Sparkle Star (✦) on top-right -->
+    <path
+      d="M 308 200 
+         Q 308 214, 322 214 
+         Q 308 214, 308 228 
+         Q 308 214, 294 214 
+         Q 308 214, 308 200 Z"
+      fill="#030014"
+    />
+  </g>
+</svg>
