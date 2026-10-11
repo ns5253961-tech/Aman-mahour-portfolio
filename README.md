@@ -65,14 +65,12 @@ space-portfolio/
     |-- motion.ts
     |-- utils.ts
   |- public/
-  |- .eslintrc.json
   |- .gitignore
   |- eslint.config.mjs
   |- netlify.toml
   |- next.config.js
+  |- package-lock.json
   |- package.json
-  |- pnpm-lock.yaml
-  |- pnpm-workspace.yaml
   |- postcss.config.js
   |- tailwind.config.ts
   |- tsconfig.json
@@ -135,7 +133,7 @@ Useful resources and dependencies that are used in Space Portfolio.
 - [@types/three](https://www.npmjs.com/package/@types/three): ^0.186.0
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.6.0
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
-- [eslint](https://www.npmjs.com/package/eslint): ^10.12.0
+- [eslint](https://www.npmjs.com/package/eslint): ^9.39.5
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.3.6
 - [framer-motion](https://www.npmjs.com/package/framer-motion): ^14.0.0
 - [maath](https://www.npmjs.com/package/maath): ^0.10.8
